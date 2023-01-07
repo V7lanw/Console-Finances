@@ -87,3 +87,25 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
+let monthCount = finances.length;
+let totalFinances = 0;
+let lastMonthFinance = finances[0][1];
+let currentMonthFinance = 0;
+let totalChanges = 0;
+for (let i = 0; i < monthCount; i++) {
+    console.log(`finances: ${finances[i]}`);
+    totalFinances += finances[i][1];
+    currentMonthFinance = finances[i][1];
+    changes = currentMonthFinance - lastMonthFinance;
+    console.log(`current changes = ${changes}`);
+    totalChanges += changes;
+    console.log(`total changes = ${changes}`);
+    lastMonthFinance = currentMonthFinance;
+}
+
+let avgChanges = (totalChanges / (monthCount - 1)).toFixed(2);
+console.log(totalFinances);
+console.log(`avg changes = ${avgChanges}`);
+console.log(`month count = ${monthCount}`);
+
+// 1 year 12 months 11 changes
