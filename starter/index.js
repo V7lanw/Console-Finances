@@ -120,3 +120,14 @@ console.log(`total finances = ${totalFinances}`);
 console.log(`avg changes = ${avgChanges}`);
 console.log(`the greatest increase of changes = ${greatestIncreaseChanges}`);
 console.log(`the greatest decrease of changes = ${greatestDecreaseChanges}`);
+
+// Formal Summary
+console.log("Financial Analysis");
+console.log("----------------------------");
+console.log("Total Months: " + monthCount);
+console.log("Total: $" + totalFinances);
+console.log("Average  Change: $" + avgChanges);
+console.log("Greatest Increase in Profits: " + greatestIncreaseChanges[0]
+             + "($" + greatestIncreaseChanges[1] + ")");
+console.log("Greatest Decrease in Profits: " + greatestDecreaseChanges[0] 
+             + "($" + greatestDecreaseChanges[1] + ")");
