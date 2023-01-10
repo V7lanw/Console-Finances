@@ -87,6 +87,7 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
+let debugOutputSwitch = confirm("Open the debug output switch?");
 let monthCount = finances.length;
 let totalFinances = 0;
 let lastMonthFinance = finances[0][1];
@@ -95,32 +96,32 @@ let totalChanges = 0;
 let greatestIncreaseChanges = ["", 0];
 let greatestDecreaseChanges = ["", 0];
 for (let i = 0; i < monthCount; i++) {
-    console.log(`finances: ${finances[i]}`);
+    debugOutputSwitch ? console.log(`finances: ${finances[i]}`) : "Nothing";
     totalFinances += finances[i][1];
     currentMonthFinance = finances[i][1];
     changes = currentMonthFinance - lastMonthFinance;
-    console.log(`current changes = ${changes}`);
+    debugOutputSwitch ? console.log(`current changes = ${changes}`) : "Nothing";
     totalChanges += changes;
-    console.log(`total changes = ${changes}`);
+    debugOutputSwitch ? console.log(`total changes = ${changes}`) : "Nothing";
     if (changes > greatestIncreaseChanges[1]) {
         greatestIncreaseChanges = [finances[i][0], changes];
     }
     if (changes < greatestDecreaseChanges[1]) {
         greatestDecreaseChanges = [finances[i][0], changes];
     }
-    console.log(`now the greatest increase of changes = ${greatestIncreaseChanges}`);
-    console.log(`now the greatest decrease of changes = ${greatestDecreaseChanges}`);
+    debugOutputSwitch ? console.log(`now the greatest increase of changes = ${greatestIncreaseChanges}`) : "Nothing";
+    debugOutputSwitch ? console.log(`now the greatest decrease of changes = ${greatestDecreaseChanges}`) : "Nothing";
     lastMonthFinance = currentMonthFinance;
 }
 
 // 86 months and 85 changes
-console.log(`month count = ${monthCount}`);
+debugOutputSwitch ? console.log(`month count = ${monthCount}`) : "Nothing";
 let avgChanges = (totalChanges / (monthCount - 1)).toFixed(2);
-console.log(`total finances = ${totalFinances}`);
-console.log(`avg changes = ${avgChanges}`);
-console.log(`the greatest increase of changes = ${greatestIncreaseChanges}`);
-console.log(`the greatest decrease of changes = ${greatestDecreaseChanges}`);
-
+debugOutputSwitch ? console.log(`total finances = ${totalFinances}`) : "Nothing";
+debugOutputSwitch ? console.log(`avg changes = ${avgChanges}`) : "Nothing";
+debugOutputSwitch ? console.log(`the greatest increase of changes = ${greatestIncreaseChanges}`) : "Nothing";
+debugOutputSwitch ? console.log(`the greatest decrease of changes = ${greatestDecreaseChanges}`) : "Nothing";
+debugOutputSwitch ? console.log(`\n\n\n`) : "Nothing";
 // Formal Summary
 console.log("Financial Analysis");
 console.log("----------------------------");
