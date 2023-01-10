@@ -92,6 +92,8 @@ let totalFinances = 0;
 let lastMonthFinance = finances[0][1];
 let currentMonthFinance = 0;
 let totalChanges = 0;
+let greatestIncreaseChanges = ["", 0];
+let greatestDecreaseChanges = ["", 0];
 for (let i = 0; i < monthCount; i++) {
     console.log(`finances: ${finances[i]}`);
     totalFinances += finances[i][1];
@@ -100,12 +102,21 @@ for (let i = 0; i < monthCount; i++) {
     console.log(`current changes = ${changes}`);
     totalChanges += changes;
     console.log(`total changes = ${changes}`);
+    if (changes > greatestIncreaseChanges[1]) {
+        greatestIncreaseChanges = [finances[i][0], changes];
+    }
+    if (changes < greatestDecreaseChanges[1]) {
+        greatestDecreaseChanges = [finances[i][0], changes];
+    }
+    console.log(`now the greatest increase of changes = ${greatestIncreaseChanges}`);
+    console.log(`now the greatest decrease of changes = ${greatestDecreaseChanges}`);
     lastMonthFinance = currentMonthFinance;
 }
 
-let avgChanges = (totalChanges / (monthCount - 1)).toFixed(2);
-console.log(totalFinances);
-console.log(`avg changes = ${avgChanges}`);
+// 86 months and 85 changes
 console.log(`month count = ${monthCount}`);
-
-// 1 year 12 months 11 changes
+let avgChanges = (totalChanges / (monthCount - 1)).toFixed(2);
+console.log(`total finances = ${totalFinances}`);
+console.log(`avg changes = ${avgChanges}`);
+console.log(`the greatest increase of changes = ${greatestIncreaseChanges}`);
+console.log(`the greatest decrease of changes = ${greatestDecreaseChanges}`);
