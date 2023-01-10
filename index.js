@@ -129,6 +129,6 @@ console.log("Total Months: " + monthCount);
 console.log("Total: $" + totalFinances);
 console.log("Average  Change: $" + avgChanges);
 console.log("Greatest Increase in Profits: " + greatestIncreaseChanges[0]
-             + "($" + greatestIncreaseChanges[1] + ")");
+             + " ($" + greatestIncreaseChanges[1] + ")");
 console.log("Greatest Decrease in Profits: " + greatestDecreaseChanges[0] 
-             + "($" + greatestDecreaseChanges[1] + ")");
+             + " ($" + greatestDecreaseChanges[1] + ")");
